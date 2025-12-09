@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>View Question</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="page-gradient">
+
+    <div data-partial="header"></div>
+
+    <main class="question-detail">
+        <section class="panel detail-card">
+            <p class="detail-topic" id="detailTopic">Loading...</p>
+            <h2 id="q_title">Loading question...</h2>
+            <p id="q_desc"></p>
+            <div class="detail-meta">
+                <span id="detailStatus">Status</span>
+            </div>
+        </section>
+
+        <section class="panel answers-panel">
+            <header class="panel-header">
+                <h3>Answers</h3>
+                <button id="refreshAnswers" class="outline-btn">Refresh</button>
+            </header>
+            <div id="answerList" class="list">Loading...</div>
+        </section>
+
+        <section class="panel form-panel">
+            <h3>Write an Answer</h3>
+            <textarea id="answerBox" rows="5" placeholder="Type your answer here..."></textarea>
+            <button id="submitAnswerBtn">Submit Answer</button>
+            <p id="answerMsg" class="msg"></p>
+        </section>
+
+        <div class="detail-links">
+            <a href="user-dashboard.html">← Back to dashboard</a>
+        </div>
+    </main>
+
+    <div data-partial="footer"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

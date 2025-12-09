@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>DoConnect — Ask Question</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="page-gradient">
+  <div data-partial="header"></div>
+
+  <main class="center-stage">
+    <div class="container form-card">
+      <h2>Ask a Question</h2>
+
+      <label>Title</label>
+      <input id="q_title" type="text" placeholder="Short title of your question" />
+
+      <label>Topic</label>
+      <input id="q_topic" type="text" placeholder="e.g. Spring Boot, JWT" />
+
+      <label>Description</label>
+      <textarea id="q_desc" rows="6" placeholder="Explain your question..."></textarea>
+
+
+      <button onclick="addQuestion()">Post Question</button>
+
+      <div id="q_msg" class="msg"></div>
+
+      <div class="small" style="margin-top:10px">
+        <a href="#" data-logout="single">Logout / Switch user</a>
+        <p style="margin-top:6px; font-size:12px; color:#888;">Questions are posted as <span
+            id="currentUserEmail">guest</span>.</p>
+      </div>
+    </div>
+  </main>
+
+  <div data-partial="footer"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resolved Questions — DoConnect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dashboard">
+    <div data-partial="header"></div>
+
+    <main class="resolved-main">
+        <section class="panel resolved-hero">
+            <p class="hero-tag">Knowledge worth bookmarking</p>
+            <h1>Resolved conversations curated by mentors and peers.</h1>
+            <p>
+                Browse threads that reached actionable answers. Reopen a discussion if you have a follow-up or share the
+                solution with someone new.
+            </p>
+            <div class="hero-actions">
+                <a href="ask-question.html" class="btn primary">Start a new topic</a>
+                <a href="user-dashboard.html" class="btn ghost">Back to feed</a>
+            </div>
+        </section>
+
+        <section class="panel resolved-feed">
+            <div class="panel-header">
+                <h2>Resolved Threads</h2>
+                <div class="panel-actions">
+                    <input id="resolvedSearch" type="text" placeholder="Filter by keyword..." />
+                    <button id="refreshResolved" class="outline-btn">Refresh</button>
+                </div>
+            </div>
+            <div id="resolvedList" class="cards-grid">Loading resolved questions...</div>
+        </section>
+    </main>
+
+    <div data-partial="footer"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

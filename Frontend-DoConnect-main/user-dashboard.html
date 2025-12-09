@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>User Dashboard — DoConnect</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dashboard">
+  <div data-partial="header"></div>
+
+  <main class="dashboard-main">
+    <div class="dashboard-wrapper">
+      <section class="panel questions-panel">
+        <div class="panel-header">
+          <h2>Question Feed</h2>
+          <div class="panel-actions">
+            <a href="ask-question.html" class="link-button">Ask Question</a>
+            <a href="#" class="link-button secondary" data-logout="single">Logout</a>
+          </div>
+        </div>
+
+        <input id="searchBox" type="text" placeholder="Search by keyword..." onkeyup="searchQuestions()" />
+
+        <div id="questionList" class="list"></div>
+      </section>
+
+      <aside class="panel chat-panel" id="chatPanel">
+        <div class="chat-header">
+          <h3>Community Chat</h3>
+          <select id="chatRoom">
+            <option value="general">#general</option>
+            <option value="java">#java</option>
+            <option value="spring">#spring</option>
+          </select>
+        </div>
+        <div id="chatStatus" class="chat-status">Say hi 👋</div>
+        <div id="chatMessages" class="chat-messages"></div>
+        <input id="chatSender" type="text" placeholder="Display name" />
+        <textarea id="chatMessage" rows="3" placeholder="Type a message and press Enter"></textarea>
+        <button id="sendChatBtn" type="button">Send Message</button>
+      </aside>
+    </div>
+
+  </main>
+
+  <div data-partial="footer"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

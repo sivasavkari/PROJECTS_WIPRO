@@ -1,0 +1,76 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        corsConfigurations:
+          "[/**]":
+            allowedOrigins:
+              - http://localhost:8088
+              - http://127.0.0.1:8088
+            allowedOriginPatterns:
+              - http://*
+              - https://*
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - PATCH
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+            exposedHeaders: "*"
+            allowCredentials: true
+      default-filters:
+        - name: CircuitBreaker
+          args:
+            name: globalCircuitBreaker
+            fallbackUri: forward:/fallback
+      routes:
+        - id: answer-service
+          uri: lb://answer-service
+          predicates:
+            - Path=/api/answers/**
+          filters:
+            - name: JwtAuthenticationGatewayFilter
+        - id: question-service
+          uri: lb://question-service
+          predicates:
+            - Path=/api/questions/**,/api/chats/**
+          filters:
+            - name: JwtAuthenticationGatewayFilter
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/users/**
+          filters:
+            - name: JwtAuthenticationGatewayFilter
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
+  main:
+    web-application-type: reactive
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+security:
+  jwt:
+    secret: veryLongSecretKeyForJwtUseReplaceInProduction_ChangeMe!
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

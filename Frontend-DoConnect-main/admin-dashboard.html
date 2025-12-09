@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Admin — Approve Questions</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div data-partial="header"></div>
+
+  <main class="center-stage">
+
+    <div class="container">
+
+      <h2>Admin — Approve Questions</h2>
+
+      <!-- LIST OF QUESTIONS -->
+      <div id="adminList" class="admin-board">
+        <section class="admin-section">
+          <header>
+            <h3>Pending Questions</h3>
+            <p>Approve or reject community submissions.</p>
+          </header>
+          <div id="pendingQuestions" class="list">Loading pending questions...</div>
+        </section>
+
+        <section class="admin-section">
+          <header>
+            <h3>Approved Questions</h3>
+            <p>Mark questions as resolved when the discussion is wrapped up.</p>
+          </header>
+          <div id="approvedQuestions" class="list">Loading approved questions...</div>
+        </section>
+      </div>
+
+      <br>
+
+      <!-- BUTTONS BLOCK -->
+      <div style="text-align: center; margin-top: 15px;">
+
+        <!-- Approve Answers Button -->
+        <a href="admin-approve-answers.html">
+          <button class="approveBtnBlue">Approve Answers</button>
+        </a>
+
+        <br><br>
+
+        <!-- Back to Login -->
+        <a href="login.html">Back to Login</a>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <div data-partial="footer"></div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
