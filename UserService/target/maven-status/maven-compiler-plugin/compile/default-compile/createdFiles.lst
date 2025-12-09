@@ -1,0 +1,11 @@
+com\doconnect\userservice\exception\UserServiceException.class
+com\doconnect\userservice\mapper\UserMapper.class
+com\doconnect\userservice\dto\UserStatusUpdateRequest.class
+com\doconnect\userservice\dto\UserProfileResponse$UserProfileResponseBuilder.class
+com\doconnect\userservice\dto\UserProfileRequest.class
+com\doconnect\userservice\exception\UserNotFoundException.class
+com\doconnect\userservice\config\OpenApiConfig.class
+com\doconnect\userservice\exception\EmailAlreadyUsedException.class
+com\doconnect\userservice\config\JwtProperties.class
+com\doconnect\userservice\exception\ProfileAlreadyExistsException.class
+com\doconnect\userservice\dto\UserProfileResponse.class
